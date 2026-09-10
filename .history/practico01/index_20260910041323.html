@@ -48,20 +48,13 @@
         <h1>Paso #6 – Implementación de Axios</h1>
         <hr>
         <h1>Paso #7 – Uso de las funciones</h1>
-        <h2>Posts:</h2>
         <ul>
-            <li v-for="post in posts" :key="post.id" @click="cargarComentarios(post.id)">
-                 <strong>Post {{ post.id }}</strong>
-                <p>{{ post.title }}</p>
-                <p>{{ post.body }}</p>
+            <li v-for="post in posts" :key="post.id">
+                {{post.id}} - {{evento.timestamp}}
+                {{evento.nombre}}
             </li>
         </ul>
-        <h2>Comentarios:</h2>
-        <ul>
-             <li v-for="comentario in comentarios" :key="comentario.id"  >
-                 {{comentario.name }} - {{comentario.body}}
-             </li>
-        </ul>
+   
     </div>
     <script>
        var app= new Vue({
@@ -129,11 +122,6 @@
                         return response.data;
                     })
                 },
-                cargarComentarios: function (postId) {
-                    this.obtenerComments(postId).then((comentarios) => {
-                        this.comentarios = comentarios;
-                    })
-                },
             },
            computed: {
             tareasPendientes: function() {
@@ -153,11 +141,7 @@
                 for (let i=1; i <= 10; i++){
                     this.obtenerPost(i).then((post) => {
                         this.posts.push(post);
-                        this.posts.sort(function(a, b) {
-                             return a.id - b.id;
-                        });
                     });
-                
                 }
             },
             beforeMount: function () {

@@ -57,11 +57,11 @@
             </li>
         </ul>
         <h2>Comentarios:</h2>
-        <ul>
-             <li v-for="comentario in comentarios" :key="comentario.id"  >
-                 {{comentario.name }} - {{comentario.body}}
-             </li>
-        </ul>
+        <ul></ul>
+        <li v-for="comentario in comentarios" :key="comentario.id"  >
+            {{comentario.name }} - {{comentario.body}}
+        </li>
+   
     </div>
     <script>
        var app= new Vue({
@@ -153,11 +153,7 @@
                 for (let i=1; i <= 10; i++){
                     this.obtenerPost(i).then((post) => {
                         this.posts.push(post);
-                        this.posts.sort(function(a, b) {
-                             return a.id - b.id;
-                        });
                     });
-                
                 }
             },
             beforeMount: function () {
