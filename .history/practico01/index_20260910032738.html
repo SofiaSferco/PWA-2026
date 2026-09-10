@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Practico 01</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
 </head>
 
 <body>
@@ -96,18 +96,7 @@
                         nombre: nombre,
                         timestamp: Date.now(),
                     })
-                },
-                obtenerPost: function(postId) {
-                    return axios.get('https://jsonplaceholder.typicode.com/posts/' + postId)
-                    .then(function (response) {
-                        return response.data;
-                    })
-                },
-                obtenerComments: function(postId) {
-                    return axios.get('https://jsonplaceholder.typicode.com/posts/' + postId + '/comments')
-                    .then(function (response) {
-                        return response.data;
-                    })
+                }
 
            },
            computed: {

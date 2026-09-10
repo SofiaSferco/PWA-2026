@@ -100,14 +100,9 @@
                 obtenerPost: function(postId) {
                     return axios.get('https://jsonplaceholder.typicode.com/posts/' + postId)
                     .then(function (response) {
-                        return response.data;
+                        retur(response);
                     })
-                },
-                obtenerComments: function(postId) {
-                    return axios.get('https://jsonplaceholder.typicode.com/posts/' + postId + '/comments')
-                    .then(function (response) {
-                        return response.data;
-                    })
+                }
 
            },
            computed: {
