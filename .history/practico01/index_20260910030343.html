@@ -5,7 +5,6 @@
     <title>Practico 01</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
-
 <body>
     <div id="app">
         <p>
@@ -38,12 +37,7 @@
         <h2>Tareas Pendientes: {{tareasPendientes.length}}</h2>
         <hr>
         <h1>Paso #5 – Lista de eventos</h1>
-        <ul>
-            <li v-for="evento in listaeventos" :key="evento.id">
-                {{evento.nombre}} / {{evento.timestamp}}
-            </li>
-        </ul>
-   
+        <hr>
     </div>
     <script>
        var app= new Vue({
@@ -89,10 +83,10 @@
                 )
                 this.nuevaTarea = '';
                 },
-                agregarEvento: function (nombre){
+                agregarEvento: function (){
                     this.listaeventos.push({
                         id: this.listaeventos.length + 1,
-                        nombre: nombre,
+                        nombre: this.nombre,
                         timestamp: Date.now(),
                     })
                 }
@@ -111,7 +105,7 @@
             
             },
             created: function () {
-                this.agregarEvento('beforeCreate');
+                this.agregarEvento('beforeCreated');
                 this.agregarEvento('created');
             },
             beforeMount: function () {
@@ -121,17 +115,9 @@
                 this.agregarEvento('mounted');
             },
             beforeUpdate: function() {
-                console.log('beforeUpdate', Date.now());
-            },
-            updated: function() {
-                console.log('updated', Date.now());
-            },
-            beforeDestroy: function () {
-                this.agregarEvento('beforeDestroy');
-            },
-            destroyed: function () {
-                console.log('destroyed', Date.now());
-            },
+                console.log('beforeUpdate');
+
+            }
 
         }
        )

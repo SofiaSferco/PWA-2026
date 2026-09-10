@@ -40,7 +40,7 @@
         <h1>Paso #5 – Lista de eventos</h1>
         <ul>
             <li v-for="evento in listaeventos" :key="evento.id">
-                {{evento.nombre}} / {{evento.timestamp}}
+                {{tarea.texto}} <input type="checkbox" v-model="tarea.completada">
             </li>
         </ul>
    
@@ -89,10 +89,10 @@
                 )
                 this.nuevaTarea = '';
                 },
-                agregarEvento: function (nombre){
+                agregarEvento: function (){
                     this.listaeventos.push({
                         id: this.listaeventos.length + 1,
-                        nombre: nombre,
+                        nombre: this.nombre,
                         timestamp: Date.now(),
                     })
                 }
