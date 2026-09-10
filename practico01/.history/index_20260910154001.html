@@ -51,8 +51,8 @@
         <h1>Paso #7 – Uso de las funciones</h1>
         <h2>Posts:</h2>
         <ul>
-            <li v-for="post in posts" :key="post.id">
-                 <strong @click="cargarComentarios(post.id)" style="cursor:pointer">Post {{ post.id }}</strong>
+            <li v-for="post in posts" :key="post.id" @click="cargarComentarios(post.id)">
+                 <strong>Post {{ post.id }}</strong>
                 <p>{{ post.title }}</p>
                 <p>{{ post.body }}</p>
             </li>
@@ -136,7 +136,7 @@
                     })
                 },
                 guardar: function () {
-                    this.agregarTarea();
+                    this.agrega
                 }
             },
            computed: {

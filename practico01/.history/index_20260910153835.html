@@ -33,7 +33,7 @@
             </li>
         </ul>
         <p>
-            <input type="text" v-model="nuevaTarea" placeholder="Nueva tarea" @keyup.enter="guardar">
+            <input type="text" v-model="nuevaTarea" placeholder="Nueva tarea" @keyup.enter="guardar"">
         </p>
         <button @click="agregarTarea">Añadir Tarea</button>
         <h2>Total de Tareas: {{totalTareas}}</h2>
@@ -51,8 +51,8 @@
         <h1>Paso #7 – Uso de las funciones</h1>
         <h2>Posts:</h2>
         <ul>
-            <li v-for="post in posts" :key="post.id">
-                 <strong @click="cargarComentarios(post.id)" style="cursor:pointer">Post {{ post.id }}</strong>
+            <li v-for="post in posts" :key="post.id" @click="cargarComentarios(post.id)">
+                 <strong>Post {{ post.id }}</strong>
                 <p>{{ post.title }}</p>
                 <p>{{ post.body }}</p>
             </li>
@@ -135,9 +135,6 @@
                         this.comentarios = comentarios;
                     })
                 },
-                guardar: function () {
-                    this.agregarTarea();
-                }
             },
            computed: {
             tareasPendientes: function() {
