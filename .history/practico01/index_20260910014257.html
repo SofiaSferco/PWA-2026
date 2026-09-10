@@ -33,9 +33,6 @@
             <input type="text" v-model="nuevaTarea" placeholder="Nueva tarea">
         </p>
         <button @click="agregarTarea">Añadir Tarea</button>
-        <h2>Total de Tareas: {{totalTareas}}</h2>
-        <h2>Tareas Pendientes: {{tareasPendientes.length}}</h2>
-        
     </div>
     <script>
        var app= new Vue({
@@ -82,19 +79,16 @@
             },
            },
            computed: {
-            tareasPendientes: function() {
-                        return this.tareas.filter(function(tarea){
-                            return tarea.completada==false
-                        }
-                    )
-                    },
-            totalTareas: function() {
-                    return this.tareas.length;
-                    },
-            
-                }
-            }
-       )
+            Utiliza una propiedad computada llamada tareasPendientes que
+devuelva el número de tareas donde completada es false.
+• Utiliza una propiedad computada llamada totalTareas que
+devuelva el número total de tareas.
+• Muestra en el HTML el "Total de Tareas:" y "Tareas
+Pendientes:".
+• Al marcar o desmarcar el checkbox de una tarea, el estado
+completada de esa tarea en el array tareas debe actualizarse.
+           }
+       })
     </script>
 </body>
 </html>

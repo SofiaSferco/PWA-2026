@@ -24,18 +24,10 @@
         <button @click="aumentar">Aumentar en 1</button><button v-on:click="decrementar">Decrementar en 1</button>
         <hr>
         <h1>Paso #4 – Lista de Tareas con Conteo y Estado</h1>
-        <ul>
-            <li v-for="tarea in tareas" :key="tarea.id">
-                {{tarea.texto}} <input type="checkbox" v-model="tarea.completada">
-            </li>
-        </ul>
-        <p>
-            <input type="text" v-model="nuevaTarea" placeholder="Nueva tarea">
-        </p>
-        <button @click="agregarTarea">Añadir Tarea</button>
-        <h2>Total de Tareas: {{totalTareas}}</h2>
-        <h2>Tareas Pendientes: {{tareasPendientes.length}}</h2>
-        
+        <li v-for="tarea in tareas" :key="tarea.id">
+            {{tarea.texto}} <input typ="checkbox">
+        </li>
+
     </div>
     <script>
        var app= new Vue({
@@ -71,30 +63,8 @@
                decrementar: function() {
                     this.contador--;
                },
-               agregarTarea: function () {
-                this.tareas.push({
-                    id:this.tareas.length + 1,
-                    texto: this.nuevaTarea,
-                    completada:false,
-                    }
-                )
-                this.nuevaTarea = '';
-            },
-           },
-           computed: {
-            tareasPendientes: function() {
-                        return this.tareas.filter(function(tarea){
-                            return tarea.completada==false
-                        }
-                    )
-                    },
-            totalTareas: function() {
-                    return this.tareas.length;
-                    },
-            
-                }
-            }
-       )
+           }
+       })
     </script>
 </body>
 </html>

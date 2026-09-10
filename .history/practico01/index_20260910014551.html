@@ -33,9 +33,6 @@
             <input type="text" v-model="nuevaTarea" placeholder="Nueva tarea">
         </p>
         <button @click="agregarTarea">Añadir Tarea</button>
-        <h2>Total de Tareas: {{totalTareas}}</h2>
-        <h2>Tareas Pendientes: {{tareasPendientes.length}}</h2>
-        
     </div>
     <script>
        var app= new Vue({
@@ -83,18 +80,12 @@
            },
            computed: {
             tareasPendientes: function() {
-                        return this.tareas.filter(function(tarea){
-                            return tarea.completada==false
-                        }
-                    )
-                    },
-            totalTareas: function() {
-                    return this.tareas.length;
-                    },
-            
+                for tarea in tareas {
+                    if (!tarea.completada)
                 }
             }
-       )
+           }
+       })
     </script>
 </body>
 </html>

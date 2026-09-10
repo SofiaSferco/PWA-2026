@@ -33,9 +33,7 @@
             <input type="text" v-model="nuevaTarea" placeholder="Nueva tarea">
         </p>
         <button @click="agregarTarea">Añadir Tarea</button>
-        <h2>Total de Tareas: {{totalTareas}}</h2>
         <h2>Tareas Pendientes: {{tareasPendientes.length}}</h2>
-        
     </div>
     <script>
        var app= new Vue({
@@ -89,8 +87,8 @@
                     )
                     },
             totalTareas: function() {
-                    return this.tareas.length;
-                    },
+                return this.tareas.
+            }
             
                 }
             }
