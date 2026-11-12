@@ -2,3 +2,6 @@
 /data
 /.history/
 /.atl/
+__pycache__/
+*.pyc
+backend/db.sqlite3
